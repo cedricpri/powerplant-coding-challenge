@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+    app:
+        build: .
+        volumes:
+            - .:/usr/src/app
+        ports:
+            - "8888:8888"
+        command: uvicorn src.main:app --host 0.0.0.0 --port 8888
